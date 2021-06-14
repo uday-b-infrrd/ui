@@ -1,0 +1,20 @@
+<input type="text" name=task_content [(ngModel)]=task_content/>
+<button (click)="addTask(task_content)">ADD</button>
+
+<table>
+  <tr>
+    <th>Task</th>
+    <th>Actions</th>
+  </tr>
+
+  <tr *ngFor = "let task of tasks">
+    <td>{{task.content}}</td>
+    <!-- <td>{{task.date}}</td>   -->
+    <td>
+      <button (click)="updateContent(task.id)">Update</button>
+    </td>
+    <td>
+      <button (click)="deleteTask(task.id)">Delete</button>
+    </td>
+  </tr>
+</table>
